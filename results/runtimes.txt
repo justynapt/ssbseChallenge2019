@@ -1,0 +1,45 @@
+time java -cp gin.jar gin.util.GPRuntime -d . -p gson -x 2000 -m create_profile_results.csv -h <maven_home> -in 21 -gn 10 -r 500 
+real	21m33.023s
+user	43m47.280s
+sys	0m16.105s
+
+time java -cp gin.jar gin.util.GPRuntime -d . -p gson -x 2000 -m create_profile_results_all.csv -h <maven_home> -in 21 -gn 10 -r 67
+real	40m3.473s
+user	68m6.087s
+sys	0m38.988s
+
+Binary operator bug:
+
+time java -cp gin.jar gin.util.GPFix -d . -p gson -x 2000  -m create_profile_results.csv -h <maven_home> -in 21 -gn 10 -et MODIFY_STATEMENT
+real	1m31.851s
+user	4m8.063s
+sys	0m5.755s
+
+time java -cp gin.jar gin.util.GPFix -d . -p gson -x 2000  -m create_profile_results_all.csv -h <maven_home> -in 21 -gn 10 -et MODIFY_STATEMENT
+real	3m50.538s
+user	10m8.074s
+sys	0m10.792s
+
+Swap statement bug:
+
+time java -cp gin.jar gin.util.GPFix -d . -p gson -x 2000  -m create_profile_results.csv -h <maven_home> -gn 10 -in 21
+real	0m40.818s
+user	1m44.360s
+sys	0m3.636s
+
+time java -cp gin.jar gin.util.GPFix -d . -p gson -x 2000  -m create_profile_results_all.csv -h <maven_home> -gn 10 -in 21
+real	1m38.292s
+user	4m39.881s
+sys	0m6.360s
+
+Copy statement bug:
+
+time java -cp gin.jar gin.util.GPFix -d . -p gson -x 2000  -m create_profile_results.csv -h <maven_home> -gn 10 -in 21
+real	0m42.016s
+user	1m44.915s
+sys	0m3.943s
+
+time java -cp gin.jar gin.util.GPFix -d . -p gson -x 2000  -m create_profile_results_all.csv -h <maven_home> -gn 10 -in 21
+real	1m54.899s
+user	5m2.082s
+sys	0m6.943s

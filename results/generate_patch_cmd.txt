@@ -1,0 +1,6 @@
+Example runs of PatchSampler that generate the best patches from the two runtime improvement experiments:
+
+java -cp gin.jar gin.PatchAnalyser -f gson/src/main/java/com/google/gson/GsonBuilder.java -d . -c com.google.gson.GsonBuilder -t "com.google.gson.functional.NullObjectAndFieldTest" -cp gson/target/classes/:gson/target/test-classes -p "| gin.edit.matched.MatchedDeleteStatement ./gson/src/main/java/com/google/gson/GsonBuilder.java:1107 | gin.edit.matched.MatchedSwapStatement ./gson/src/main/java/com/google/gson/GsonBuilder.java:1070 <-> ./gson/src/main/java/com/google/gson/GsonBuilder.java:1070 |"
+
+java -cp gin.jar gin.PatchAnalyser -f gson/src/main/java/com/google/gson/GsonBuilder.java -d . -c com.google.gson.GsonBuilder -t "com.google.gson.functional.NullObjectAndFieldTest" -cp gson/target/classes/:gson/target/test-classes -p "| gin.edit.matched.MatchedSwapStatement ./gson/src/main/java/com/google/gson/GsonBuilder.java:1100 <-> ./gson/src/main/java/com/google/gson/GsonBuilder.java:1107 |"
+
